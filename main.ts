@@ -181,43 +181,49 @@ drawTextCentered("FRIDAY 20 NOVEMBER 2026", W / 2, 220, 4, RED);
 fillRect(48, 262, W - 96, 3, INK);
 
 // the six stories of the day
-type Story = { num: string; head: string; l1: string; l2: string };
+type Story = { num: string; head: string; l1: string; l2: string; src: string };
 const stories: Story[] = [
   {
     num: "1",
     head: "RUSSIA BOMBARDS UKRAINE",
     l1: "400 DRONES AND 110 MISSILES HIT",
     l2: "KYIV; 8 DEAD, 30 INJURED; TWO LAND IN POLAND",
+    src: "SOURCE: REUTERS",
   },
   {
     num: "2",
     head: "ICJ: MYANMAR GUILTY",
     l1: "COURT FINDS MYANMAR RESPONSIBLE",
     l2: "FOR ROHINGYA GENOCIDE, A FIRST",
+    src: "SOURCE: REUTERS",
   },
   {
     num: "3",
     head: "TRUMP, XI, PUTIN SIGN PACT",
     l1: "FIRST THREE-WAY SUMMIT ENDS IN",
     l2: "JOINT PEACE DECLARATION, SHENZHEN",
+    src: "SOURCE: AP",
   },
   {
     num: "4",
     head: "AI ROUT SINKS STOCKS",
     l1: "S AND P 500 FALLS 3.7 PERCENT AS",
     l2: "CHIP SELL-OFF PUSHES IT TO CORRECTION",
+    src: "SOURCE: BLOOMBERG",
   },
   {
     num: "5",
     head: "QUAKE SHAKES PERU",
     l1: "MAGNITUDE 6.7 TREMOR HITS THE",
     l2: "ANDES; ROADS DAMAGED, ONE INJURED",
+    src: "SOURCE: USGS",
   },
   {
     num: "6",
     head: "MISSILES DOWN OVER RIYADH",
     l1: "THREE HOUTHI MISSILES SHOT DOWN;",
     l2: "TANKER HIT AND BURNING IN HORMUZ",
+    src: "SOURCE: REUTERS",
   },
 ];
 
@@ -232,6 +238,8 @@ for (const st of stories) {
   // summary lines
   drawText(st.l1, 124, y + 8 + 52, 3, GREY);
   drawText(st.l2, 124, y + 8 + 52 + 28, 3, GREY);
+  // source attribution
+  drawText(st.src, 124, y + 8 + 52 + 28 + 32, 2, RED);
   // divider
   fillRect(48, y + blockH - 24, W - 96, 2, INK);
   y += blockH;
